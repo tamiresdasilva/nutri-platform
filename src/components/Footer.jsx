@@ -3,37 +3,37 @@ import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-100 pt-20 pb-10">
+    <footer className="bg-white dark:bg-[#020617] border-t border-gray-100 dark:border-gray-800 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6">
         {/* TOP */}
         <div className="grid md:grid-cols-4 gap-12">
           {/* LOGO + DESC */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="bg-green-100 text-green-600 p-2 rounded-xl font-bold">
+              <div className="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 p-2 rounded-xl font-bold">
                 N
               </div>
-              <span className="font-semibold text-gray-900 text-lg">
+              <span className="font-semibold text-gray-900 dark:text-white text-lg">
                 NomeApp
               </span>
             </div>
 
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
               Simplificando a gestão de nutricionistas e conectando pacientes
               através da tecnologia.
             </p>
 
             {/* SOCIAL */}
             <div className="flex gap-3 mt-5">
-              <button className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:text-[#F59E0B] hover:bg-orange-50 transition">
+              <button className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 dark:bg-[#0B1220] text-gray-600 dark:text-gray-400 hover:text-[#F59E0B] hover:bg-orange-50 dark:hover:bg-gray-800 transition">
                 <FaInstagram size={14} />
               </button>
 
-              <button className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:text-[#F59E0B] hover:bg-orange-50 transition">
+              <button className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 dark:bg-[#0B1220] text-gray-600 dark:text-gray-400 hover:text-[#F59E0B] hover:bg-orange-50 dark:hover:bg-gray-800 transition">
                 <FaFacebookF size={14} />
               </button>
 
-              <button className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:text-[#F59E0B] hover:bg-orange-50 transition">
+              <button className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 dark:bg-[#0B1220] text-gray-600 dark:text-gray-400 hover:text-[#F59E0B] hover:bg-orange-50 dark:hover:bg-gray-800 transition">
                 <FaLinkedinIn size={14} />
               </button>
             </div>
@@ -41,22 +41,24 @@ export default function Footer() {
 
           {/* NAVEGAÇÃO */}
           <div>
-            <h3 className="text-gray-900 font-semibold mb-4">Navegação</h3>
+            <h3 className="text-gray-900 dark:text-white font-semibold mb-4">
+              Navegação
+            </h3>
 
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li className="hover:text-gray-900 cursor-pointer transition">
+            <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <li className="hover:text-gray-900 dark:hover:text-white cursor-pointer transition">
                 Início
               </li>
-              <li className="hover:text-gray-900 cursor-pointer transition">
+              <li className="hover:text-gray-900 dark:hover:text-white cursor-pointer transition">
                 Funcionalidades
               </li>
-              <li className="hover:text-gray-900 cursor-pointer transition">
+              <li className="hover:text-gray-900 dark:hover:text-white cursor-pointer transition">
                 Como funciona
               </li>
-              <li className="hover:text-gray-900 cursor-pointer transition">
+              <li className="hover:text-gray-900 dark:hover:text-white cursor-pointer transition">
                 Sobre
               </li>
-              <li className="hover:text-gray-900 cursor-pointer transition">
+              <li className="hover:text-gray-900 dark:hover:text-white cursor-pointer transition">
                 Login
               </li>
             </ul>
@@ -64,9 +66,11 @@ export default function Footer() {
 
           {/* RECURSOS */}
           <div>
-            <h3 className="text-gray-900 font-semibold mb-4">Recursos</h3>
+            <h3 className="text-gray-900 dark:text-white font-semibold mb-4">
+              Recursos
+            </h3>
 
-            <ul className="space-y-2 text-sm text-gray-600">
+            <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
               <li>Gestão de pacientes</li>
               <li>Prescrições dietéticas e de suplementos</li>
               <li>Cálculos e relatórios automatizados</li>
@@ -77,11 +81,13 @@ export default function Footer() {
 
           {/* CONTATO */}
           <div>
-            <h3 className="text-gray-900 font-semibold mb-4">Contato</h3>
+            <h3 className="text-gray-900 dark:text-white font-semibold mb-4">
+              Contato
+            </h3>
 
-            <div className="space-y-3 text-sm text-gray-600">
-              <div className="flex items-center gap-3 hover:text-gray-900 transition">
-                <div className="w-9 h-9 flex items-center justify-center rounded-full bg-orange-100 text-[#F59E0B]">
+            <div className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+              <div className="flex items-center gap-3 hover:text-gray-900 dark:hover:text-white transition">
+                <div className="w-9 h-9 flex items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900/30 text-[#F59E0B]">
                   <Mail size={16} />
                 </div>
                 <span>contato@nomeapp.com</span>
@@ -91,16 +97,16 @@ export default function Footer() {
         </div>
 
         {/* BOTTOM */}
-        <div className="border-t border-gray-100 mt-16 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 gap-4">
+        <div className="border-t border-gray-100 dark:border-gray-800 mt-16 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 dark:text-gray-400 gap-4">
           <span>
             © {new Date().getFullYear()} NomeApp. Todos os direitos reservados.
           </span>
 
           <div className="flex gap-6">
-            <span className="hover:text-gray-900 cursor-pointer transition">
+            <span className="hover:text-gray-900 dark:hover:text-white cursor-pointer transition">
               Termos de Uso
             </span>
-            <span className="hover:text-gray-900 cursor-pointer transition">
+            <span className="hover:text-gray-900 dark:hover:text-white cursor-pointer transition">
               Política de Privacidade
             </span>
           </div>
