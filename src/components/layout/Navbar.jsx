@@ -1,7 +1,10 @@
 import { Moon, Sun, PersonStanding } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+
   const [dark, setDark] = useState(() => {
     return localStorage.getItem("theme") === "dark";
   });
@@ -24,9 +27,9 @@ export default function Navbar() {
   };
 
   // 👇 garante que o tema inicial seja aplicado
-  useState(() => {
+  useEffect(() => {
     applyTheme(dark);
-  }, []);
+  }, [dark]);
 
   return (
     <header className="w-full bg-white dark:bg-[#020617] border-b border-gray-100 dark:border-gray-800 transition-colors">
@@ -91,7 +94,10 @@ export default function Navbar() {
             )}
           </button>
 
-          <button className="px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#0B1220] text-[#111827] dark:text-white text-[14px] hover:bg-gray-50 dark:hover:bg-gray-800 transition shadow-sm">
+          <button
+            onClick={() => navigate("/login")}
+            className="px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#0B1220] text-[#111827] dark:text-white text-[14px] hover:bg-gray-50 dark:hover:bg-gray-800 transition shadow-sm"
+          >
             Login
           </button>
 
