@@ -32,7 +32,7 @@ export default function Navbar() {
   }, [dark]);
 
   return (
-    <header className="w-full bg-white dark:bg-[#020617] border-b border-gray-100 dark:border-gray-800 transition-colors">
+    <header className="w-full bg-white dark:bg-[#0F172A] border-b border-gray-100 dark:border-gray-800 transition-colors">
       <div className="max-w-[1200px] mx-auto px-6 py-3 flex items-center justify-between">
         {/* LOGO */}
         <div className="flex items-center gap-3">

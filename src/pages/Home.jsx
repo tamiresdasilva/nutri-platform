@@ -4,7 +4,6 @@ import Features from "../components/Features";
 import SystemPreview from "../components/SystemPreview";
 import HowItWorks from "../components/HowItWorks";
 import Footer from "../components/layout/Footer";
-import HowToJoin from "../components/HowToJoin";
 import About from "../components/About";
 
 export default function Home() {
@@ -15,7 +14,6 @@ export default function Home() {
       <Features />
       <SystemPreview />
       <HowItWorks />
-      <HowToJoin />
       <About />
       <Footer />
     </>

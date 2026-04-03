@@ -1,9 +1,11 @@
-import { Mail } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import nutricionistaImg from "../assets/images/nutricionista.jpg";
 
 export default function About() {
+  const navigate = useNavigate();
+
   return (
-    <section className="py-28 bg-white dark:bg-[#020617]">
+    <section className="py-28 bg-[#FAF7F2] dark:bg-[#020617]">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
         {/* LEFT CONTENT */}
         <div>
@@ -21,23 +23,41 @@ export default function About() {
             nutricionistas e melhorar a experiência dos pacientes. Nossa
             plataforma oferece recursos completos para acompanhamento
             nutricional, registro de refeições e prescrição de planos
-            personalizados com cálculos automatizados, tornando a rotina do
-            profissional mais prática e organizada.
+            personalizados com cálculos automatizados.
           </p>
 
           <p className="text-gray-600 dark:text-gray-400 mt-4 text-lg leading-relaxed">
-            A NomeApp também facilita a comunicação com os pacientes, incentiva
-            a adesão aos planos e torna o cuidado com a alimentação mais
-            acessível e intuitivo. Estamos comprometidos em transformar a forma
-            como nutricionistas e pacientes se conectam e cuidam da saúde
-            através da tecnologia. Junte-se a nós nessa jornada de inovação
-            digital no âmbito nutricional!
+            Atualmente, a plataforma está em fase inicial e o acesso está sendo
+            liberado de forma gradual para nutricionistas convidados.
           </p>
+
+          {/* Access Rules */}
+          <div className="mt-6 space-y-3 text-sm">
+            <p className="text-gray-700 dark:text-gray-300">
+              🥗 <span className="font-medium">Para nutricionistas:</span> Caso
+              você ainda não tenha recebido um convite, é possível entrar na
+              lista de espera.
+            </p>
+
+            <p className="text-gray-700 dark:text-gray-400">
+              👤 <span className="font-medium">Para pacientes:</span> o acesso é
+              disponibilizado diretamente pelo seu nutricionista responsável.
+            </p>
+          </div>
+
+          {/* CTA */}
+          <div className="mt-8">
+            <button
+              onClick={() => navigate("/request-access")}
+              className="bg-[#F59E0B] hover:bg-[#D97706] text-white px-6 py-3 rounded-xl font-semibold shadow-md transition"
+            >
+              Solicitar acesso →
+            </button>
+          </div>
         </div>
 
         {/* RIGHT IMAGE */}
         <div className="relative">
-          {/* Image */}
           <img
             src={nutricionistaImg}
             alt="Nutricionista utilizando plataforma"

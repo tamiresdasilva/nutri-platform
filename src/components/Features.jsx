@@ -98,7 +98,7 @@ export default function Features() {
   ];
 
   return (
-    <section className="py-24 bg-white dark:bg-[#020617]">
+    <section className="py-24 bg-white dark:bg-[#0F172A]">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <h2
           className="text-4xl font-semibold text-gray-900 dark:text-white"
@@ -120,10 +120,10 @@ export default function Features() {
             return (
               <div
                 key={i}
-                className="bg-[#FAF7F2] dark:bg-[#0B1220] p-7 rounded-2xl text-left 
+                className="bg-[#FAF7F2] dark:bg-[#111827] p-7 rounded-2xl text-left 
                 transition-all duration-300 
                 hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]
-                border border-transparent dark:border-gray-800"
+                border border-transparent dark:border-[#1E2939]"
               >
                 <div
                   className={`w-12 h-12 flex items-center justify-center rounded-xl ${item.color}`}
