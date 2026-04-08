@@ -60,12 +60,6 @@ export default function Navbar() {
             Funcionalidades
           </a>
           <a
-            href="#como-participar"
-            className="hover:text-[#111827] dark:hover:text-white transition"
-          >
-            Como Participar
-          </a>
-          <a
             href="#sobre"
             className="hover:text-[#111827] dark:hover:text-white transition"
           >
@@ -101,7 +95,10 @@ export default function Navbar() {
             Login
           </button>
 
-          <button className="bg-[#F59E0B] hover:bg-[#D97706] text-white px-5 py-2 rounded-lg text-[14px] font-medium transition shadow-sm">
+          <button
+            onClick={() => navigate("/request-access")}
+            className="bg-[#F59E0B] hover:bg-[#D97706] text-white px-5 py-2 rounded-lg text-[14px] font-medium transition shadow-sm"
+          >
             Solicitar Acesso
           </button>
         </div>

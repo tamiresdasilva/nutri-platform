@@ -19,10 +19,8 @@ export default function LoginForm() {
 
     try {
       const data = await loginRequest(email, password);
-
       login(data);
 
-      // redirect por role
       if (data.user.role === "nutricionista") {
         navigate("/nutri");
       } else {
@@ -36,15 +34,16 @@ export default function LoginForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-5">
       {/* EMAIL */}
       <div>
-        <label className="text-sm text-gray-600 dark:text-gray-400">
-          E-mail
-        </label>
         <input
           type="email"
-          className="w-full mt-1 px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-[#020617] text-gray-900 dark:text-white outline-none focus:ring-2 focus:ring-green-400"
+          placeholder="E-mail"
+          className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700
+          bg-gray-50 dark:bg-[#020617]
+          text-gray-900 dark:text-white
+          outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -53,23 +52,28 @@ export default function LoginForm() {
 
       {/* SENHA */}
       <div>
-        <label className="text-sm text-gray-600 dark:text-gray-400">
-          Senha
-        </label>
         <input
           type="password"
-          className="w-full mt-1 px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-[#020617] text-gray-900 dark:text-white outline-none focus:ring-2 focus:ring-green-400"
+          placeholder="Senha"
+          className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700
+          bg-gray-50 dark:bg-[#020617]
+          text-gray-900 dark:text-white
+          outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
 
-        {/* ESQUECEU SENHA */}
-        <div className="text-right mt-2">
+        <div className="flex justify-between items-center mt-2 text-sm">
+          <label className="flex items-center gap-2 text-gray-500 dark:text-gray-400">
+            <input type="checkbox" className="accent-green-500" />
+            Lembrar-me
+          </label>
+
           <button
             type="button"
             onClick={() => navigate("/forgot-password")}
-            className="text-sm text-green-600 hover:underline"
+            className="text-green-600 hover:underline"
           >
             Esqueceu sua senha?
           </button>
@@ -79,17 +83,17 @@ export default function LoginForm() {
       {/* ERRO */}
       {error && <p className="text-red-500 text-sm">{error}</p>}
 
-      {/* BOTÃO */}
+      {/* BOTÃO LOGIN */}
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-[#F59E0B] hover:bg-[#D97706] text-white py-3 rounded-xl font-semibold transition shadow-md disabled:opacity-60"
+        className="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg font-semibold transition shadow-md disabled:opacity-60"
       >
-        {loading ? "Entrando..." : "Entrar"}
+        {loading ? "Entrando..." : "Login"}
       </button>
 
       {/* SOLICITAR ACESSO */}
-      <p className="text-center text-sm text-gray-500 dark:text-gray-400">
+      <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-2">
         Não possui conta?{" "}
         <button
           type="button"

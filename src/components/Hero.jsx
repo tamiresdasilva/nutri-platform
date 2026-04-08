@@ -23,11 +23,8 @@ export default function Hero() {
 
           {/* Buttons */}
           <div className="flex gap-4 mt-8">
-            <button
-              className="bg-[#F59E0B] hover:bg-[#D97706] text-white px-6 py-3 rounded-xl font-semibold shadow-md transition"
-              id="como-participar"
-            >
-              Quero participar →
+            <button className="bg-[#F59E0B] hover:bg-[#D97706] text-white px-6 py-3 rounded-xl font-semibold shadow-md transition">
+              Quero saber mais →
             </button>
 
             <button className="border border-gray-200 dark:border-gray-700 px-6 py-3 rounded-xl font-semibold text-[#111827] dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition">
