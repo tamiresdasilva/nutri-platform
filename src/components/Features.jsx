@@ -99,11 +99,8 @@ export default function Features() {
 
   return (
     <section className="py-24 bg-white dark:bg-[#0F172A]">
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        <h2
-          className="text-4xl font-semibold text-gray-900 dark:text-white"
-          id="funcionalidades"
-        >
+      <div id="funcionalidades" className="max-w-7xl mx-auto px-6 text-center">
+        <h2 className="text-4xl font-semibold text-gray-900 dark:text-white">
           Todas as funcionalidades que você precisa
         </h2>
 

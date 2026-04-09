@@ -1,7 +1,10 @@
 import { Mail } from "lucide-react";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export default function Footer() {
+  const navigate = useNavigate();
+
   return (
     <footer className="bg-white dark:bg-[#0F172A] border-t border-gray-100 dark:border-gray-800 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6">
@@ -46,20 +49,40 @@ export default function Footer() {
             </h3>
 
             <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-              <li className="hover:text-gray-900 dark:hover:text-white cursor-pointer transition">
-                Início
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-gray-900 dark:hover:text-white transition"
+                >
+                  Início
+                </a>
               </li>
-              <li className="hover:text-gray-900 dark:hover:text-white cursor-pointer transition">
-                Funcionalidades
+
+              <li>
+                <a
+                  href="#funcionalidades"
+                  className="hover:text-gray-900 dark:hover:text-white transition"
+                >
+                  Funcionalidades
+                </a>
               </li>
-              <li className="hover:text-gray-900 dark:hover:text-white cursor-pointer transition">
-                Como funciona
+
+              <li>
+                <a
+                  href="#sobre"
+                  className="hover:text-gray-900 dark:hover:text-white transition"
+                >
+                  Sobre
+                </a>
               </li>
-              <li className="hover:text-gray-900 dark:hover:text-white cursor-pointer transition">
-                Sobre
-              </li>
-              <li className="hover:text-gray-900 dark:hover:text-white cursor-pointer transition">
-                Login
+
+              <li>
+                <button
+                  onClick={() => navigate("/login")}
+                  className="hover:text-gray-900 dark:hover:text-white cursor-pointer transition"
+                >
+                  Login
+                </button>
               </li>
             </ul>
           </div>

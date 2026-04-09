@@ -5,13 +5,10 @@ export default function About() {
   const navigate = useNavigate();
 
   return (
-    <section className="py-28 bg-[#FAF7F2] dark:bg-[#020617]">
+    <section id="sobre" className="py-28 bg-[#FAF7F2] dark:bg-[#020617]">
       <div className="max-w-7xl mx-auto px-6 text-center">
         {/* TITLE */}
-        <h2
-          className="text-4xl font-semibold text-gray-900 dark:text-white"
-          id="sobre"
-        >
+        <h2 className="text-4xl font-semibold text-gray-900 dark:text-white">
           Sobre a nossa plataforma
         </h2>
 
@@ -26,7 +23,10 @@ export default function About() {
         {/* CARDS */}
         <div className="grid md:grid-cols-2 gap-6 mt-14 text-left">
           {/* NUTRICIONISTA */}
-          <div className="relative bg-white dark:bg-[#0B1220] p-6 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden">
+          <div
+            className="relative bg-white dark:bg-[#0B1220] p-6 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden transition-all duration-300 
+  hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]"
+          >
             {/* Gradient corner */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-[#F59E0B]/30 to-transparent rounded-bl-full" />
 
@@ -50,7 +50,10 @@ export default function About() {
           </div>
 
           {/* PACIENTE */}
-          <div className="relative bg-white dark:bg-[#0B1220] p-6 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden">
+          <div
+            className="relative bg-white dark:bg-[#0B1220] p-6 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden transition-all duration-300 
+  hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]"
+          >
             {/* Gradient corner */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-[#22C55E]/30 to-transparent rounded-bl-full" />
 
@@ -92,14 +95,14 @@ export default function About() {
           <div className="flex gap-3">
             <button
               onClick={() => navigate("/request-access")}
-              className="bg-[#F59E0B] hover:bg-[#D97706] text-white px-6 py-3 rounded-xl font-semibold transition"
+              className="bg-[#F59E0B] hover:bg-[#D97706] text-white px-6 py-3 rounded-xl font-semibold cursor-pointer transition"
             >
               Solicitar acesso
             </button>
 
             <button
               onClick={() => navigate("/login")}
-              className="border border-gray-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-white/10 transition"
+              className="border border-gray-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-white/10 cursor-pointer transition"
             >
               Já tenho acesso
             </button>

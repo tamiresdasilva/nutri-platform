@@ -1,10 +1,14 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Hero() {
+  const navigate = useNavigate();
+
   return (
     <section className="relative w-full bg-[#FAF7F2] dark:bg-[#020617] py-24 overflow-hidden">
       {/* Efeito verde (lado direito) */}
       <div className="absolute right-0 top-0 h-full w-[40%] bg-[radial-gradient(circle_at_right,#86EFAC,transparent_70%)] opacity-60"></div>
 
-      <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
+      <div className="max-w-300 mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
         {/* LEFT */}
         <div>
           {/* Title */}
@@ -23,11 +27,17 @@ export default function Hero() {
 
           {/* Buttons */}
           <div className="flex gap-4 mt-8">
-            <button className="bg-[#F59E0B] hover:bg-[#D97706] text-white px-6 py-3 rounded-xl font-semibold shadow-md transition">
+            <a
+              href="#sobre"
+              className="bg-[#F59E0B] hover:bg-[#D97706] text-white px-6 py-3 rounded-xl font-semibold shadow-md cursor-pointer transition inline-block"
+            >
               Quero saber mais →
-            </button>
+            </a>
 
-            <button className="border border-gray-200 dark:border-gray-700 px-6 py-3 rounded-xl font-semibold text-[#111827] dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition">
+            <button
+              onClick={() => navigate("/login")}
+              className="border border-gray-200 dark:border-gray-700 px-6 py-3 rounded-xl font-semibold text-[#111827] dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer transition"
+            >
               Já sou convidado
             </button>
           </div>

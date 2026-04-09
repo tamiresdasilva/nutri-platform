@@ -80,7 +80,7 @@ export default function HowItWorks() {
         <div className="inline-flex bg-gray-100 dark:bg-[#111827] p-1 rounded-xl mb-16">
           <button
             onClick={() => setMode("nutricionista")}
-            className={`px-6 py-2.5 rounded-lg text-sm font-medium transition ${
+            className={`px-6 py-2.5 rounded-lg text-sm font-medium cursor-pointer transition ${
               isNutri
                 ? "bg-orange-500 text-white shadow-sm"
                 : "text-gray-600 dark:text-gray-400"
@@ -91,7 +91,7 @@ export default function HowItWorks() {
 
           <button
             onClick={() => setMode("paciente")}
-            className={`px-6 py-2.5 rounded-lg text-sm font-medium transition ${
+            className={`px-6 py-2.5 rounded-lg text-sm font-medium cursor-pointer transition ${
               !isNutri
                 ? "bg-green-500 text-white shadow-sm"
                 : "text-gray-600 dark:text-gray-400"
