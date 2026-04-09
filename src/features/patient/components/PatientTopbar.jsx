@@ -1,6 +1,6 @@
 import { Bell, Menu } from "lucide-react";
 
-export default function NutriTopbar({ setOpenMobile }) {
+export default function PatientTopbar({ setOpenMobile }) {
   return (
     <header className="h-16 bg-white dark:bg-[#0B1220] border-b border-gray-100 dark:border-gray-800 flex items-center justify-between px-6">
       {/* LEFT */}
@@ -25,15 +25,15 @@ export default function NutriTopbar({ setOpenMobile }) {
         <div className="flex items-center gap-3">
           <div className="text-right leading-tight">
             <p className="text-sm font-medium text-gray-800 dark:text-white">
-              Dra. Ana Silva
+              João Silva
             </p>
             <span className="text-xs text-gray-500 dark:text-gray-400">
-              Nutricionista
+              Paciente
             </span>
           </div>
 
           <div className="w-9 h-9 rounded-full bg-green-500 text-white flex items-center justify-center text-sm font-medium">
-            AS
+            JS
           </div>
         </div>
       </div>

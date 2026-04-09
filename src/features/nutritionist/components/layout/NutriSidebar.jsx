@@ -13,11 +13,12 @@ import {
   Settings,
   LogOut,
   X,
-  PanelLeftClose,
-  PanelLeftOpen,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
+
 import { NavLink, useNavigate } from "react-router-dom";
-import { useAuth } from "../../../context/AuthContext";
+import { useAuth } from "../../../../context/AuthContext";
 
 const menu = [
   { name: "Painel", icon: LayoutDashboard, path: "/nutri" },
@@ -72,50 +73,53 @@ export default function NutriSidebar({
         {/* TOP */}
         <div>
           {/* HEADER */}
-          <div className="p-4 flex items-center justify-between">
-            {!collapsed && (
-              <div className="flex items-center gap-3">
-                <div className="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-1 rounded-md font-bold">
-                  N
-                </div>
+          <div className="relative p-4 flex items-center">
+            {/* LOGO */}
+            <div className="flex items-center gap-3">
+              <div className="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-1 rounded-md font-bold">
+                N
+              </div>
+
+              {!collapsed && (
                 <span className="font-semibold text-gray-800 dark:text-white">
                   NomeApp
                 </span>
-              </div>
-            )}
+              )}
+            </div>
 
-            {/* BOTÕES */}
-            <div className="flex items-center gap-2">
-              {/* COLLAPSE COM TOOLTIP */}
-              <div className="relative group hidden md:block">
+            {/* BOTÃO FLUTUANTE (SETA) */}
+            <div className="absolute -right-3 top-1/2 -translate-y-1/2 hidden md:block">
+              <div className="relative group">
                 <button
                   onClick={() => setCollapsed((prev) => !prev)}
-                  className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+                  className="w-7 h-7 flex items-center justify-center rounded-full
+                  bg-green-500 text-white shadow-md hover:bg-green-600 transition"
                 >
                   {collapsed ? (
-                    <PanelLeftOpen size={18} />
+                    <ChevronRight size={16} />
                   ) : (
-                    <PanelLeftClose size={18} />
+                    <ChevronLeft size={16} />
                   )}
                 </button>
 
+                {/* TOOLTIP */}
                 <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 whitespace-nowrap text-xs bg-gray-900 text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
                   {collapsed ? "Expandir menu" : "Minimizar menu"}
                 </span>
               </div>
-
-              {/* CLOSE MOBILE */}
-              <button
-                onClick={() => setOpenMobile(false)}
-                className="md:hidden p-2"
-              >
-                <X size={18} />
-              </button>
             </div>
+
+            {/* CLOSE MOBILE */}
+            <button
+              onClick={() => setOpenMobile(false)}
+              className="md:hidden ml-auto p-2"
+            >
+              <X size={18} />
+            </button>
           </div>
 
           {/* MENU */}
-          <nav className="px-2 space-y-1">
+          <nav className="px-2 space-y-1 mt-2">
             {menu.map((item) => {
               const Icon = item.icon;
 
@@ -130,7 +134,9 @@ export default function NutriSidebar({
                       isActive
                         ? "bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium"
                         : "text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
-                    }`
+                    }
+                    ${collapsed ? "justify-center" : ""}
+                  `
                   }
                 >
                   <Icon size={18} />
@@ -148,7 +154,10 @@ export default function NutriSidebar({
               logout();
               navigate("/");
             }}
-            className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition"
+            className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm 
+            text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition
+            ${collapsed ? "justify-center" : ""}
+            `}
           >
             <LogOut size={18} />
             {!collapsed && "Sair da conta"}

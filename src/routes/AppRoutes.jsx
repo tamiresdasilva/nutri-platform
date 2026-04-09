@@ -16,6 +16,16 @@ import NutriChat from "../features/nutritionist/pages/NutriChat";
 import NutriSupport from "../features/nutritionist/pages/NutriSupport";
 import NutriNotifications from "../features/nutritionist/pages/NutriNotifications";
 import NutriSettings from "../features/nutritionist/pages/NutriSettings";
+import PatientChat from "../features/patient/pages/PatientChat";
+import PatientSchedule from "../features/patient/pages/PatientSchedule";
+import PatientForms from "../features/patient/pages/PatientForms";
+import PatientProgress from "../features/patient/pages/PatientProgress";
+import PatientDiary from "../features/patient/pages/PatientDiary";
+import PatientPrescriptions from "../features/patient/pages/PatientPrescriptions";
+import PatientPlans from "../features/patient/pages/PatientPlans";
+import PatientSettings from "../features/patient/pages/PatientSettings";
+import PatientSupport from "../features/patient/pages/PatientSupport";
+import PatientNotifications from "../features/patient/pages/PatientNotifications";
 
 export default function AppRoutes() {
   return (
@@ -35,6 +45,97 @@ export default function AppRoutes() {
         }
       />
 
+      <Route
+        path="/paciente/planos"
+        element={
+          <ProtectedRoute role="paciente">
+            <PatientPlans />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/paciente/prescricoes"
+        element={
+          <ProtectedRoute role="paciente">
+            <PatientPrescriptions />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/paciente/diario"
+        element={
+          <ProtectedRoute role="paciente">
+            <PatientDiary />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/paciente/evolucao"
+        element={
+          <ProtectedRoute role="paciente">
+            <PatientProgress />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/paciente/formularios"
+        element={
+          <ProtectedRoute role="paciente">
+            <PatientForms />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/paciente/agenda"
+        element={
+          <ProtectedRoute role="paciente">
+            <PatientSchedule />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/paciente/chat"
+        element={
+          <ProtectedRoute role="paciente">
+            <PatientChat />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/paciente/notificacoes"
+        element={
+          <ProtectedRoute role="paciente">
+            <PatientNotifications />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/paciente/ajuda"
+        element={
+          <ProtectedRoute role="paciente">
+            <PatientSupport />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/paciente/config"
+        element={
+          <ProtectedRoute role="paciente">
+            <PatientSettings />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* área do nutricionista */}
       <Route
         path="/nutri"
         element={
