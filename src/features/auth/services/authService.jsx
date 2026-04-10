@@ -1,15 +1,4 @@
-const mockUsers = [
-  {
-    email: "nutri@teste.com",
-    password: "nutrisenha",
-    role: "nutricionista",
-  },
-  {
-    email: "paciente@teste.com",
-    password: "pacisenha",
-    role: "paciente",
-  },
-];
+import { mockUsers } from "../../../mocks/users";
 
 export async function loginRequest(email, password) {
   // simula delay de API
@@ -29,6 +18,8 @@ export async function loginRequest(email, password) {
     user: {
       email: user.email,
       role: user.role,
+      name: user.name,
+      avatar: user.avatar,
     },
   };
 }
