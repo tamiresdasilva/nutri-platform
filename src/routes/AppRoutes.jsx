@@ -26,6 +26,7 @@ import PatientPlans from "../features/patient/pages/PatientPlans";
 import PatientSettings from "../features/patient/pages/PatientSettings";
 import PatientSupport from "../features/patient/pages/PatientSupport";
 import PatientNotifications from "../features/patient/pages/PatientNotifications";
+import ForgotPassword from "../features/auth/pages/ForgotPassword";
 
 export default function AppRoutes() {
   return (
@@ -33,6 +34,7 @@ export default function AppRoutes() {
       {/* públicas */}
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/request-access" element={<RequestAccess />} />
 
       {/* privadas */}

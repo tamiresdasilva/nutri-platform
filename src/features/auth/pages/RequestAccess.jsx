@@ -6,7 +6,7 @@ export default function RequestAccess() {
       {/* LEFT - BANNER */}
       <section
         className="hidden md:flex relative items-center justify-center p-10 overflow-hidden
-        bg-gradient-to-br from-green-400 via-green-500 to-emerald-600
+        bg-linear-to-br from-green-400 via-green-500 to-emerald-600
         dark:from-green-900 dark:via-green-800 dark:to-emerald-900"
       >
         <div className="max-w-md text-white space-y-6 z-10">
@@ -31,7 +31,7 @@ export default function RequestAccess() {
         </div>
 
         {/* DECORAÇÕES */}
-        <div className="absolute w-72 h-72 bg-white/10 rounded-full top-[-50px] left-[-50px]" />
+        <div className="absolute w-72 h-72 bg-white/10 rounded-full -top-12.5 -left-12.5" />
         <div className="absolute w-40 h-40 bg-white/10 rounded-full bottom-10 right-10" />
         <div className="absolute w-24 h-24 bg-white/10 rounded-full bottom-32 left-20" />
       </section>
