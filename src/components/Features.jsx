@@ -98,9 +98,15 @@ export default function Features() {
   ];
 
   return (
-    <section className="py-24 bg-white dark:bg-[#0F172A]">
+    <section
+      aria-labelledby="features-title"
+      className="py-24 bg-white dark:bg-[#0F172A]"
+    >
       <div id="funcionalidades" className="max-w-7xl mx-auto px-6 text-center">
-        <h2 className="text-4xl font-semibold text-gray-900 dark:text-white">
+        <h2
+          id="features-title"
+          className="text-3xl md:text-4xl font-semibold text-gray-900 dark:text-white"
+        >
           Todas as funcionalidades que você precisa
         </h2>
 
@@ -110,22 +116,24 @@ export default function Features() {
           comunicação e a adesão dos pacientes.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-8 mt-16">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-16">
           {features.map((item, i) => {
             const Icon = item.icon;
 
             return (
-              <div
+              <li
                 key={i}
+                role="article"
                 className="bg-[#FAF7F2] dark:bg-[#111827] p-7 rounded-2xl text-left 
                 transition-all duration-300 
                 hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]
+                motion-reduce:transform-none motion-reduce:transition-none
                 border border-transparent dark:border-[#1E2939]"
               >
                 <div
                   className={`w-12 h-12 flex items-center justify-center rounded-xl ${item.color}`}
                 >
-                  <Icon size={22} />
+                  <Icon size={22} aria-hidden="true" />
                 </div>
 
                 <h3 className="mt-5 text-lg font-semibold text-gray-900 dark:text-white">
@@ -135,10 +143,10 @@ export default function Features() {
                 <p className="text-gray-600 dark:text-gray-400 text-[15px] mt-2 leading-relaxed">
                   {item.desc}
                 </p>
-              </div>
+              </li>
             );
           })}
-        </div>
+        </ul>
       </div>
     </section>
   );

@@ -19,10 +19,14 @@ export default function SystemPreview() {
           desnecessários.
         </p>
 
-        {/* Dashboard */}
-        <div className="mt-16 bg-white dark:bg-[#0B1220] rounded-2xl border border-gray-100 dark:border-gray-800 shadow-lg p-6 text-left">
+        {/* Dashboard Preview */}
+        <div
+          role="img"
+          aria-label="Pré-visualização do dashboard com lista de pacientes, gráfico de evolução e próximos atendimentos"
+          className="mt-16 bg-white dark:bg-[#0B1220] rounded-2xl border border-gray-100 dark:border-gray-800 shadow-lg p-6 text-left"
+        >
           {/* Top bar */}
-          <div className="flex items-center justify-between border-b border-gray-100 dark:border-gray-800 pb-4">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between border-b border-gray-100 dark:border-gray-800 pb-4 gap-4">
             <div className="flex items-center gap-3">
               <div className="bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400 px-2 py-1 rounded-md font-bold">
                 N
@@ -34,7 +38,7 @@ export default function SystemPreview() {
 
             <input
               placeholder="Buscar paciente, dieta..."
-              className="bg-gray-50 dark:bg-[#020617] px-4 py-2 rounded-lg w-1/3 text-sm outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 text-gray-900 dark:text-white placeholder-gray-400"
+              className="bg-gray-50 dark:bg-[#020617] px-4 py-2 rounded-lg w-full md:w-1/3 text-sm outline-none text-gray-900 dark:text-white placeholder-gray-400"
             />
 
             <div className="w-9 h-9 bg-orange-400 text-white flex items-center justify-center rounded-full text-sm font-medium">
@@ -42,20 +46,20 @@ export default function SystemPreview() {
             </div>
           </div>
 
-          <div className="flex mt-6 gap-6">
+          <div className="flex flex-col md:flex-row mt-6 gap-6">
             {/* Sidebar */}
-            <div className="w-1/4 space-y-2">
+            <div className="w-full md:w-1/4 space-y-2">
               <div className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 px-4 py-2.5 rounded-lg font-medium">
                 Pacientes
               </div>
 
-              <div className="px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
+              <div className="px-4 py-2 text-gray-600 dark:text-gray-400">
                 Agenda
               </div>
-              <div className="px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
+              <div className="px-4 py-2 text-gray-600 dark:text-gray-400">
                 Modelos de Dieta
               </div>
-              <div className="px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
+              <div className="px-4 py-2 text-gray-600 dark:text-gray-400">
                 Alimentos
               </div>
 
@@ -66,13 +70,13 @@ export default function SystemPreview() {
             </div>
 
             {/* Main */}
-            <div className="w-3/4 space-y-6">
+            <div className="w-full md:w-3/4 space-y-6">
               {/* Chart */}
               <div className="bg-[#FAF7F2] dark:bg-[#020617] p-5 rounded-xl h-44 flex items-end gap-3">
                 {[40, 60, 50, 70, 55, 80].map((h, i) => (
                   <div
                     key={i}
-                    className="bg-green-500 rounded-md w-6 transition-all duration-300 hover:opacity-80"
+                    className="bg-green-500 rounded-md w-6 opacity-90"
                     style={{ height: `${h}%` }}
                   />
                 ))}
@@ -84,9 +88,7 @@ export default function SystemPreview() {
                   <h3 className="font-semibold text-gray-900 dark:text-white">
                     Próximos Atendimentos
                   </h3>
-                  <span className="text-orange-500 text-sm cursor-pointer hover:underline">
-                    Ver todos
-                  </span>
+                  <span className="text-orange-500 text-sm">Ver todos</span>
                 </div>
 
                 <div className="space-y-3 text-sm">
@@ -98,7 +100,7 @@ export default function SystemPreview() {
                   ].map((name, i) => (
                     <div
                       key={i}
-                      className="flex justify-between items-center bg-white dark:bg-[#0B1220] p-3.5 rounded-lg transition hover:shadow-sm border border-transparent dark:border-gray-800"
+                      className="flex justify-between items-center bg-white dark:bg-[#0B1220] p-3.5 rounded-lg border border-transparent dark:border-gray-800"
                     >
                       <span className="text-gray-700 dark:text-gray-300">
                         {name}

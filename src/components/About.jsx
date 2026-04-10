@@ -5,10 +5,17 @@ export default function About() {
   const navigate = useNavigate();
 
   return (
-    <section id="sobre" className="py-28 bg-[#FAF7F2] dark:bg-[#020617]">
+    <section
+      id="sobre"
+      aria-labelledby="about-title"
+      className="py-28 bg-[#FAF7F2] dark:bg-[#020617]"
+    >
       <div className="max-w-7xl mx-auto px-6 text-center">
         {/* TITLE */}
-        <h2 className="text-4xl font-semibold text-gray-900 dark:text-white">
+        <h2
+          id="about-title"
+          className="text-4xl font-semibold text-gray-900 dark:text-white"
+        >
           Sobre a nossa plataforma
         </h2>
 
@@ -21,18 +28,22 @@ export default function About() {
         </p>
 
         {/* CARDS */}
-        <div className="grid md:grid-cols-2 gap-6 mt-14 text-left">
+        <div className="grid md:grid-cols-2 gap-6 mt-14 text-left" role="list">
           {/* NUTRICIONISTA */}
           <div
+            role="listitem"
             className="relative bg-white dark:bg-[#0B1220] p-6 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden transition-all duration-300 
-  hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]"
+            hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]"
           >
             {/* Gradient corner */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-[#F59E0B]/30 to-transparent rounded-bl-full" />
+            <div
+              aria-hidden="true"
+              className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-[#F59E0B]/30 to-transparent rounded-bl-full"
+            />
 
             <div className="flex items-start gap-3 relative z-10">
               <div className="bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400 p-2 rounded-lg">
-                <Salad size={18} />
+                <Salad size={18} aria-hidden="true" />
               </div>
 
               <div>
@@ -51,15 +62,19 @@ export default function About() {
 
           {/* PACIENTE */}
           <div
+            role="listitem"
             className="relative bg-white dark:bg-[#0B1220] p-6 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden transition-all duration-300 
-  hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]"
+            hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]"
           >
             {/* Gradient corner */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-[#22C55E]/30 to-transparent rounded-bl-full" />
+            <div
+              aria-hidden="true"
+              className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-[#22C55E]/30 to-transparent rounded-bl-full"
+            />
 
             <div className="flex items-start gap-3 relative z-10">
               <div className="bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400 p-2 rounded-lg">
-                <User size={18} />
+                <User size={18} aria-hidden="true" />
               </div>
 
               <div>
@@ -92,17 +107,17 @@ export default function About() {
             </p>
           </div>
 
-          <div className="flex gap-3">
+          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             <button
               onClick={() => navigate("/request-access")}
-              className="bg-[#F59E0B] hover:bg-[#D97706] text-white px-6 py-3 rounded-xl font-semibold cursor-pointer transition"
+              className="w-full sm:w-auto bg-[#F59E0B] hover:bg-[#D97706] text-white px-6 py-3 rounded-xl font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F59E0B] focus-visible:ring-offset-2 cursor-pointer"
             >
               Solicitar acesso
             </button>
 
             <button
               onClick={() => navigate("/login")}
-              className="border border-gray-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-white/10 cursor-pointer transition"
+              className="w-full sm:w-auto border border-gray-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-white/10 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 cursor-pointer"
             >
               Já tenho acesso
             </button>
