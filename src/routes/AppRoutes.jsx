@@ -27,6 +27,7 @@ import PatientSettings from "../features/patient/pages/PatientSettings";
 import PatientSupport from "../features/patient/pages/PatientSupport";
 import PatientNotifications from "../features/patient/pages/PatientNotifications";
 import ForgotPassword from "../features/auth/pages/ForgotPassword";
+import PublicProfilePreview from "../features/nutritionist/components/publicProfilePreview/PublicProfilePreview";
 
 export default function AppRoutes() {
   return (
@@ -224,6 +225,15 @@ export default function AppRoutes() {
         element={
           <ProtectedRoute role="nutricionista">
             <NutriPublicProfile />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/nutri/perfil/preview"
+        element={
+          <ProtectedRoute role="nutricionista">
+            <PublicProfilePreview />
           </ProtectedRoute>
         }
       />

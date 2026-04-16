@@ -10,7 +10,7 @@ export default function ForgotPassword() {
       {/* LEFT */}
       <section
         className="hidden md:flex relative items-center justify-center p-10 overflow-hidden
-        bg-gradient-to-br from-green-400 via-green-500 to-emerald-600
+        bg-linear-to-br from-green-400 via-green-500 to-emerald-600
         dark:from-green-900 dark:via-green-800 dark:to-emerald-900"
       >
         <div className="max-w-md text-white space-y-6 z-10">
