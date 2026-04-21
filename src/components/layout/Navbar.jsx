@@ -1,36 +1,13 @@
 import { Moon, Sun, PersonStanding, Menu, X } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTheme } from "../../context/useTheme";
 
 export default function Navbar() {
   const navigate = useNavigate();
   const menuRef = useRef(null);
-
-  const [dark, setDark] = useState(() => {
-    return localStorage.getItem("theme") === "dark";
-  });
-
   const [open, setOpen] = useState(false);
-
-  const applyTheme = (isDark) => {
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  };
-
-  const toggleDark = () => {
-    const newTheme = !dark;
-    setDark(newTheme);
-    applyTheme(newTheme);
-  };
-
-  useEffect(() => {
-    applyTheme(dark);
-  }, [dark]);
+  const { dark, toggleTheme } = useTheme();
 
   // fechar ao clicar fora
   useEffect(() => {
@@ -124,7 +101,7 @@ export default function Navbar() {
           </button>
 
           <button
-            onClick={toggleDark}
+            onClick={toggleTheme}
             aria-label={dark ? "Ativar modo claro" : "Ativar modo escuro"}
             className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F59E0B] cursor-pointer"
           >
@@ -168,7 +145,7 @@ export default function Navbar() {
           </button>
 
           <button
-            onClick={toggleDark}
+            onClick={toggleTheme}
             aria-label={dark ? "Ativar modo claro" : "Ativar modo escuro"}
             className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F59E0B] cursor-pointer"
           >

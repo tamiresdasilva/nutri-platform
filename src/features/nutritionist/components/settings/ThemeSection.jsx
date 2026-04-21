@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
 import { Moon, Sun } from "lucide-react";
+import { useTheme } from "../../../../context/useTheme";
 
-function Toggle({ enabled, setEnabled }) {
+function Toggle({ enabled, onToggle }) {
   return (
     <button
-      onClick={() => setEnabled(!enabled)}
+      onClick={onToggle}
       className={`w-11 h-6 rounded-full transition ${
         enabled ? "bg-green-500" : "bg-gray-300"
       }`}
@@ -19,15 +19,7 @@ function Toggle({ enabled, setEnabled }) {
 }
 
 export default function ThemeSection() {
-  const [dark, setDark] = useState(false);
-
-  useEffect(() => {
-    if (dark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [dark]);
+  const { dark, toggleTheme } = useTheme();
 
   return (
     <section className="space-y-4">
@@ -57,7 +49,7 @@ export default function ThemeSection() {
           <div className="flex items-center gap-3">
             <Sun size={16} className="text-gray-400 dark:text-gray-500" />
 
-            <Toggle enabled={dark} setEnabled={setDark} />
+            <Toggle enabled={dark} onToggle={toggleTheme} />
 
             <Moon size={16} className="text-gray-600 dark:text-gray-300" />
           </div>
