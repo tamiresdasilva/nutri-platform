@@ -1,3 +1,5 @@
+import Reveal from "./ui/Reveal";
+
 import {
   Users,
   ClipboardList,
@@ -103,26 +105,30 @@ export default function Features() {
       className="py-24 bg-white dark:bg-[#0F172A]"
     >
       <div id="funcionalidades" className="max-w-7xl mx-auto px-6 text-center">
+        <Reveal>
         <h2
           id="features-title"
           className="text-3xl md:text-4xl font-semibold text-gray-900 dark:text-white"
         >
           Todas as funcionalidades que você precisa
         </h2>
+        </Reveal>
 
+        <Reveal delay={0.1}>
         <p className="text-gray-500 dark:text-gray-400 mt-4 max-w-2xl mx-auto text-lg">
           Nossa plataforma foi desenhada pensando na rotina do nutricionista,
           com ferramentas práticas que economizam seu tempo e facilitam a
           comunicação e a adesão dos pacientes.
         </p>
+        </Reveal>
 
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-16">
           {features.map((item, i) => {
             const Icon = item.icon;
 
             return (
-              <li
-                key={i}
+              <Reveal direction="none" key={i} delay={i * 0.05}
+                as="li"
                 role="article"
                 className="bg-[#FAF7F2] dark:bg-[#111827] p-7 rounded-2xl text-left 
                 transition-all duration-300 
@@ -143,7 +149,7 @@ export default function Features() {
                 <p className="text-gray-600 dark:text-gray-400 text-[15px] mt-2 leading-relaxed">
                   {item.desc}
                 </p>
-              </li>
+              </Reveal>
             );
           })}
         </ul>

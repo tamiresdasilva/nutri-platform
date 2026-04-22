@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Salad, User } from "lucide-react";
+import Reveal from "./ui/Reveal";
 
 export default function About() {
   const navigate = useNavigate();
@@ -12,28 +13,33 @@ export default function About() {
     >
       <div className="max-w-7xl mx-auto px-6 text-center">
         {/* TITLE */}
+        <Reveal>
         <h2
           id="about-title"
           className="text-4xl font-semibold text-gray-900 dark:text-white"
         >
           Sobre a nossa plataforma
         </h2>
+        </Reveal>
 
         {/* DESCRIPTION */}
+        <Reveal delay={0.1}>
         <p className="text-gray-600 dark:text-gray-400 mt-4 max-w-3xl mx-auto text-lg leading-relaxed">
           A NomeApp foi criada em 2026 com o objetivo de facilitar a rotina de
           nutricionistas e melhorar a experiência dos pacientes. Atualmente, a
           plataforma está em fase inicial e o acesso será liberado de forma
           gradual por convite.
         </p>
+        </Reveal>
 
         {/* CARDS */}
         <div className="grid md:grid-cols-2 gap-6 mt-14 text-left" role="list">
           {/* NUTRICIONISTA */}
+          <Reveal delay={0.15} className="h-full">
           <div
             role="listitem"
             className="relative bg-white dark:bg-[#0B1220] p-6 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden transition-all duration-300 
-            hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]"
+            hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] h-full"
           >
             {/* Gradient corner */}
             <div
@@ -59,12 +65,14 @@ export default function About() {
               </div>
             </div>
           </div>
+          </Reveal>
 
           {/* PACIENTE */}
+          <Reveal delay={0.25} className="h-full">
           <div
             role="listitem"
             className="relative bg-white dark:bg-[#0B1220] p-6 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden transition-all duration-300 
-            hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]"
+            hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] h-full"
           >
             {/* Gradient corner */}
             <div
@@ -91,9 +99,11 @@ export default function About() {
               </div>
             </div>
           </div>
+          </Reveal>
         </div>
 
         {/* CTA BANNER */}
+        <Reveal delay={0.3} direction="up">
         <div className="mt-20 bg-linear-to-r from-[#0F172A] to-[#1E293B] rounded-2xl p-10 text-left flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="text-2xl font-semibold text-white">
@@ -123,6 +133,7 @@ export default function About() {
             </button>
           </div>
         </div>
+        </Reveal>
       </div>
     </section>
   );

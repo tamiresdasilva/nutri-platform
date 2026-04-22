@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Lock } from "lucide-react";
+import Reveal from "./ui/Reveal";
 
 export default function Hero() {
   const navigate = useNavigate();
@@ -24,6 +25,8 @@ export default function Hero() {
       <div className="max-w-300 mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
         {/* LEFT */}
         <div>
+          
+          <Reveal>
           {/* Title */}
           <h1
             id="hero-title"
@@ -32,7 +35,10 @@ export default function Hero() {
             Centralize a gestão dos seus{" "}
             <span className="text-[#22C55E]">pacientes em um só lugar</span>
           </h1>
+          </Reveal>
 
+
+          <Reveal delay={0.1}>
           {/* Description */}
           <p className="text-[#6B7280] dark:text-gray-400 mt-6 text-lg leading-relaxed max-w-xl">
             Plataforma web para nutricionistas e seus pacientes. Crie planos
@@ -40,7 +46,9 @@ export default function Hero() {
             evolução dos pacientes e automatize seus agendamentos e atendimentos
             em um só lugar.
           </p>
+          </Reveal>
 
+          <Reveal delay={0.2}>
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
             <a
@@ -50,6 +58,7 @@ export default function Hero() {
             >
               Quero saber mais →
             </a>
+            
 
             <button
               onClick={() => navigate("/login")}
@@ -59,7 +68,9 @@ export default function Hero() {
               Já sou convidado
             </button>
           </div>
+          </Reveal>
 
+          <Reveal delay={0.3}>
           {/* Info */}
           <div
             role="note"
@@ -75,8 +86,10 @@ export default function Hero() {
               convidados
             </span>
           </div>
+          </Reveal>
         </div>
 
+        <Reveal direction="left" delay={0.3}>
         {/* RIGHT */}
         <div
           aria-label="Prévia do painel do nutricionista"
@@ -110,9 +123,11 @@ export default function Hero() {
               </h2>
             </div>
           </div>
+          
 
           <div className="mt-6 h-24 bg-[#22C55E] rounded-lg opacity-80"></div>
         </div>
+        </Reveal>
       </div>
     </section>
   );

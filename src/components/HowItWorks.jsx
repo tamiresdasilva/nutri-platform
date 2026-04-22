@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Reveal from "./ui/Reveal";
 import {
   UserPlus,
   FileText,
@@ -117,13 +118,16 @@ export default function HowItWorks() {
           {/* Linha (SÓ desktop) */}
           <div className="hidden md:block absolute left-1/2 top-0 h-full w-[2px] bg-gray-200 dark:bg-[#1E2939] -translate-x-1/2"></div>
 
-          <div className="space-y-20">
+          <div key={mode} className="space-y-20">
             {steps.map((step, index) => {
               const Icon = step.icon;
 
               return (
-                <div
+                <Reveal
                   key={index}
+                  as="div"
+                  delay={index * 0.08}
+                  direction={index % 2 === 0 ? "left" : "right"}
                   className={`
                     flex flex-col items-center text-center
                     md:flex-row md:items-center md:text-left
@@ -169,7 +173,7 @@ export default function HowItWorks() {
 
                   {/* Espaço (SÓ desktop) */}
                   <div className="hidden md:block w-1/2"></div>
-                </div>
+                </Reveal>
               );
             })}
           </div>

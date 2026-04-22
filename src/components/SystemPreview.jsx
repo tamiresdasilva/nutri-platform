@@ -1,25 +1,34 @@
+import Reveal from "./ui/Reveal";
+
 export default function SystemPreview() {
   return (
     <section className="py-24 bg-[#FAF7F2] dark:bg-[#020617]">
       <div className="max-w-7xl mx-auto px-6 text-center">
         {/* Badge */}
+        <Reveal>
         <span className="inline-block bg-orange-100 text-orange-600 dark:bg-[#3A2A12] dark:text-[#F59E0B] px-4 py-1.5 rounded-full text-sm mb-4">
           Visão Geral do Sistema
         </span>
+        </Reveal>
 
         {/* Title */}
+        <Reveal delay={0.1}>
         <h2 className="text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">
           Experiência focada na produtividade
         </h2>
+        </Reveal>
 
         {/* Description */}
+        <Reveal delay={0.2}>
         <p className="text-gray-500 dark:text-gray-400 mt-4 max-w-2xl mx-auto text-lg leading-relaxed">
           Nossa interface limpa e intuitiva foi projetada para que você acesse
           as informações mais importantes de forma rápida, sem cliques
           desnecessários.
         </p>
+        </Reveal>
 
         {/* Dashboard Preview */}
+        <Reveal direction="scale" delay={0.3}>
         <div
           role="img"
           aria-label="Pré-visualização do dashboard com lista de pacientes, gráfico de evolução e próximos atendimentos"
@@ -115,6 +124,7 @@ export default function SystemPreview() {
             </div>
           </div>
         </div>
+        </Reveal>
       </div>
     </section>
   );
