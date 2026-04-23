@@ -14,10 +14,21 @@ export default function NutriChat() {
     setSelected,
     messages,
     sendMessage,
+    sendFile,
+    deleteConversation,
+    deleteMessage,
     currentUser,
   } = useChat();
 
   const [searchQuery, setSearchQuery] = useState("");
+
+  const handleDeleteConversation = () => {
+    if (selected) deleteConversation(selected.id);
+  };
+
+  const handleDeleteMessage = (messageId) => {
+    if (selected) deleteMessage(selected.id, messageId);
+  };
 
   return (
     <NutriLayout>
@@ -29,8 +40,8 @@ export default function NutriChat() {
             selectedId={selected?.id}
             onSelect={setSelected}
             currentUserRole={currentUser?.role}
-            searchQuery={searchQuery} // ✅ novo
-            onSearchChange={setSearchQuery} // ✅ novo
+            searchQuery={searchQuery}
+            onSearchChange={setSearchQuery}
           />
         </div>
 
@@ -40,9 +51,15 @@ export default function NutriChat() {
             messages={selected ? messages[selected.id] || [] : []}
             currentUserId={currentUser?.id}
             selectedUser={selected}
+            onDeleteConversation={handleDeleteConversation}
+            onDeleteMessage={handleDeleteMessage}
           />
 
-          <MessageInput onSendMessage={sendMessage} disabled={!selected} />
+          <MessageInput
+            onSendMessage={sendMessage}
+            onSendFile={sendFile}
+            disabled={!selected}
+          />
         </div>
       </div>
     </NutriLayout>
