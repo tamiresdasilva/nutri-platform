@@ -1,4 +1,4 @@
-import PatientLayout from "../components/PatientLayout";
+import PatientLayout from "../components/layout/PatientLayout";
 import { useAuth } from "../../../context/AuthContext";
 
 export default function PatientDashboard() {

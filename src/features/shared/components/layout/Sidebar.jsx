@@ -1,45 +1,10 @@
-import {
-  LayoutDashboard,
-  Users,
-  Calendar,
-  ClipboardList,
-  FileText,
-  Pill,
-  BarChart3,
-  MessageCircle,
-  Bell,
-  User,
-  HelpCircle,
-  Settings,
-  LogOut,
-  X,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
+import { LogOut, X, ChevronLeft, ChevronRight } from "lucide-react";
 
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../../context/AuthContext";
 
-const menu = [
-  { name: "Painel", icon: LayoutDashboard, path: "/nutri" },
-  { name: "Pacientes", icon: Users, path: "/nutri/pacientes" },
-  { name: "Agenda", icon: Calendar, path: "/nutri/agenda" },
-  {
-    name: "Planos Alimentares",
-    icon: ClipboardList,
-    path: "/nutri/planos-alimentares",
-  },
-  { name: "Formulários", icon: FileText, path: "/nutri/formularios" },
-  { name: "Prescrições", icon: Pill, path: "/nutri/prescricoes" },
-  { name: "Relatórios", icon: BarChart3, path: "/nutri/relatorios" },
-  { name: "Chat", icon: MessageCircle, path: "/nutri/chat" },
-  { name: "Notificações", icon: Bell, path: "/nutri/notificacoes" },
-  { name: "Perfil Público", icon: User, path: "/nutri/perfil" },
-  { name: "Ajuda", icon: HelpCircle, path: "/nutri/ajuda" },
-  { name: "Configurações", icon: Settings, path: "/nutri/config" },
-];
-
-export default function NutriSidebar({
+export default function Sidebar({
+  menu,
   collapsed,
   setCollapsed,
   openMobile,
@@ -50,7 +15,6 @@ export default function NutriSidebar({
 
   return (
     <>
-      {/* OVERLAY MOBILE */}
       {openMobile && (
         <div
           onClick={() => setOpenMobile(false)}
@@ -60,21 +24,20 @@ export default function NutriSidebar({
 
       <aside
         className={`
-        fixed md:static z-50
-        h-screen
-        bg-white dark:bg-[#0B1220]
-        border-r border-gray-100 dark:border-gray-800
-        flex flex-col justify-between
-        transition-all duration-300
-        ${collapsed ? "w-20" : "w-64"}
-        ${openMobile ? "left-0" : "-left-full md:left-0"}
-      `}
+            fixed top-0 left-0 z-50
+            h-screen
+             bg-white dark:bg-[#0B1220]
+            border-r border-gray-100 dark:border-gray-800
+            flex flex-col justify-between
+            transition-all duration-300
+            ${collapsed ? "w-20" : "w-64"}
+            ${openMobile ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
+        `}
       >
         {/* TOP */}
         <div>
           {/* HEADER */}
           <div className="relative p-4 flex items-center">
-            {/* LOGO */}
             <div className="flex items-center gap-3">
               <div className="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-1 rounded-md font-bold">
                 N
@@ -87,13 +50,13 @@ export default function NutriSidebar({
               )}
             </div>
 
-            {/* BOTÃO FLUTUANTE (SETA) */}
+            {/* BOTÃO COLLAPSE */}
             <div className="absolute -right-3 top-1/2 -translate-y-1/2 hidden md:block">
               <div className="relative group">
                 <button
                   onClick={() => setCollapsed((prev) => !prev)}
                   className="w-7 h-7 flex items-center justify-center rounded-full
-                  bg-green-500 text-white shadow-md hover:bg-green-600 transition"
+                  bg-green-500 text-white shadow-md hover:bg-green-600 cursor-pointer transition"
                 >
                   {collapsed ? (
                     <ChevronRight size={16} />
@@ -102,7 +65,6 @@ export default function NutriSidebar({
                   )}
                 </button>
 
-                {/* TOOLTIP */}
                 <span className="absolute left-full ml-2 top-1/2 -translate-y-1/2 whitespace-nowrap text-xs bg-gray-900 text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
                   {collapsed ? "Expandir menu" : "Minimizar menu"}
                 </span>
@@ -112,7 +74,7 @@ export default function NutriSidebar({
             {/* CLOSE MOBILE */}
             <button
               onClick={() => setOpenMobile(false)}
-              className="md:hidden ml-auto p-2"
+              className="md:hidden ml-auto p-2 cursor-pointer"
             >
               <X size={18} />
             </button>
@@ -127,7 +89,7 @@ export default function NutriSidebar({
                 <NavLink
                   key={item.name}
                   to={item.path}
-                  end={item.path === "/nutri"}
+                  end={item.end}
                   className={({ isActive }) =>
                     `flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition
                     ${
@@ -155,7 +117,7 @@ export default function NutriSidebar({
               navigate("/");
             }}
             className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm 
-            text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition
+            text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition cursor-pointer
             ${collapsed ? "justify-center" : ""}
             `}
           >

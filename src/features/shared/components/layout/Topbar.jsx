@@ -1,7 +1,7 @@
 import { Bell, Menu } from "lucide-react";
 import { useAuth } from "../../../../context/AuthContext";
 
-export default function NutriTopbar({ setOpenMobile }) {
+export default function Topbar({ setOpenMobile }) {
   const { auth } = useAuth();
   const user = auth?.user;
 
@@ -16,10 +16,8 @@ export default function NutriTopbar({ setOpenMobile }) {
   }
 
   return (
-    <header className="h-16 bg-white dark:bg-[#0B1220] border-b border-gray-100 dark:border-gray-800 flex items-center justify-between px-6">
-      {/* LEFT */}
+    <header className="fixed top-0 left-0 right-0 z-40 h-16 bg-white/80 dark:bg-[#0B1220]/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 flex items-center justify-between px-6">
       <div className="flex items-center gap-3">
-        {/* MOBILE MENU */}
         <button
           onClick={() => setOpenMobile(true)}
           className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
@@ -28,14 +26,11 @@ export default function NutriTopbar({ setOpenMobile }) {
         </button>
       </div>
 
-      {/* RIGHT */}
       <div className="flex items-center gap-5">
-        {/* NOTIFICAÇÃO */}
         <button className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
           <Bell size={18} className="text-gray-600 dark:text-gray-300" />
         </button>
 
-        {/* USER */}
         <div className="flex items-center gap-3">
           <div className="text-right leading-tight">
             <p className="text-sm font-medium text-gray-800 dark:text-white">

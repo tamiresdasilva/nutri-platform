@@ -12,14 +12,9 @@ export async function loginRequest(email, password) {
     throw new Error("Credenciais inválidas");
   }
 
-  // simula resposta real de backend
+  // ✅ retorna o usuário COMPLETO (não cortar campos!)
   return {
     token: "fake-jwt-token",
-    user: {
-      email: user.email,
-      role: user.role,
-      name: user.name,
-      avatar: user.avatar,
-    },
+    user: user,
   };
 }

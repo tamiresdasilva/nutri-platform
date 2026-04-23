@@ -21,9 +21,13 @@ export default function LoginForm() {
 
     try {
       const data = await loginRequest(email, password);
-      login(data);
 
-      if (data.user.role === "nutricionista") {
+      // 🔥 garante formato único SEMPRE
+      const user = data.user ?? data;
+
+      login({ user });
+
+      if (user.role === "nutricionista") {
         navigate("/nutri");
       } else {
         navigate("/paciente");
