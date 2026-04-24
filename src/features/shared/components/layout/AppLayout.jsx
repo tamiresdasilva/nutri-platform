@@ -27,7 +27,7 @@ export default function AppLayout({ children, menu }) {
         <Topbar setOpenMobile={setOpenMobile} />
 
         {/* SCROLL AREA */}
-        <main className="flex-1 overflow-y-auto pt-16 p-6 bg-[#FAF7F2] dark:bg-[#020617]">
+        <main className="flex-1 overflow-y-auto pt-20 p-6 bg-[#FAF7F2] dark:bg-[#020617]">
           {children}
         </main>
       </div>
